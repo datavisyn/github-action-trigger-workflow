@@ -4,7 +4,7 @@ set -e
 usage_docs() {
   echo ""
   echo "You can use this Github Action with:"
-  echo "- uses: datavisyn/trigger-workflow-and-wait"
+  echo "- uses: datavisyn/github-action-trigger-workflow"
   echo "  with:"
   echo "    owner: datavisyn"
   echo "    repo: myrepo"

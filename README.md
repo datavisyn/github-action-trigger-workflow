@@ -1,9 +1,9 @@
 # Trigger Workflow and Wait
 
 Github Action for trigger a workflow from another workflow. The action then waits for a response.
-see: https://github.com/datavisyn/trigger-workflow-and-wait/blob/master/README.md
+see: https://github.com/datavisyn/github-action-trigger-workflow/blob/master/README.md
 
-see also https://github.com/convictional/trigger-workflow-and-wait
+see also https://github.com/convictional/github-action-trigger-workflow
 
 **When would you use it?**
 
@@ -32,7 +32,7 @@ When deploying an app you may need to deploy additional services, this Github Ac
 ### Simple
 
 ```yaml
-- uses: ./.github/actions/trigger-workflow-and-wait
+- uses: ./.github/actions/github-action-trigger-workflow
   with:
     owner: datavisyn
     repo: myrepo
@@ -42,7 +42,7 @@ When deploying an app you may need to deploy additional services, this Github Ac
 ### All Options
 
 ```yaml
-- uses: ./.github/actions/trigger-workflow-and-wait
+- uses: ./.github/actions/github-action-trigger-workflow
   with:
     owner: datavisyn
     repo: myrepo
