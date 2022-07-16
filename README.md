@@ -1,7 +1,7 @@
 # Trigger Workflow and Wait
 
 Github Action for trigger a workflow from another workflow. The action then waits for a response.
-see: https://github.com/datavisyn/github-action-trigger-workflow/blob/master/README.md
+see: https://github.com/datavisyn/github-action-trigger-workflow/blob/main/README.md
 
 see also https://github.com/convictional/github-action-trigger-workflow
 
@@ -87,7 +87,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Pause for 25 seconds
         run: |
           sleep 25
