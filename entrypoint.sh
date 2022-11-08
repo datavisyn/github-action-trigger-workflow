@@ -84,7 +84,7 @@ validate_args() {
 
 lets_wait() {
   echo "Sleeping for ${wait_interval} seconds"
-  sleep $wait_interval
+  sleep "$wait_interval"
 }
 
 api() {
@@ -103,12 +103,6 @@ api() {
     echo >&2 "response: $response"
     exit 1
   fi
-}
-
-lets_wait() {
-  local interval=${1:-$wait_interval}
-  echo >&2 "Sleeping for $interval seconds"
-  sleep "$interval"
 }
 
 # Return the ids of the most recent workflow runs, optionally filtered by user
@@ -209,8 +203,8 @@ main() {
     echo "Skipping waiting for workflow."
   fi
 }
-echo ${GITHUB_API_URL}
-echo ${INPUT_OWNER}
-echo ${INPUT_REPO}
+echo "${GITHUB_API_URL}"
+echo "${INPUT_OWNER}"
+echo "${INPUT_REPO}"
 
 main

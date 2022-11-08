@@ -1,5 +1,7 @@
-name: 'Trigger Workflow'
-description: 'Triggers another workflows and wait'
+name: github-action-trigger-workflow
+description: Triggers another workflows and wait
+author: datavisyn
+
 inputs:
   owner:
     description: "The owner of the repository where the workflow is contained."

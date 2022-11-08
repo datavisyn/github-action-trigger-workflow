@@ -1,0 +1,40 @@
+name: build
+
+on: [push, workflow_dispatch]
+
+env:
+  WORKFLOW_BRANCH: "new_deployment"
+  TIME_ZONE: "Europe/Vienna"
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: '${{ github.workflow }}-${{ github.ref || github.head_ref }}'
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          repository: datavisyn/github-workflows
+          ref: ${{ env.WORKFLOW_BRANCH }}
+          path: ./tmp/github-workflows
+      - name: lint dockerfiles
+        id: lint-docker
+        uses: ./tmp/github-workflows/.github/actions/lint-docker
+        with:
+          config: .github/linters/.hadolint.yaml
+          recursive: true
+      - name: show dockerfile lint error
+        if: ( steps.lint-docker.outcome == 'failure' )
+        run: |
+          echo ${{ steps.lint-docker.outcome }}
+          echo -e "#### Docker Lint Result: ${{ steps.lint-docker.outputs.results }}"
+      - name: lint github action files
+        id: lint-ga
+        uses: ./tmp/github-workflows/.github/actions/lint-github-actions

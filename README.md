@@ -1,14 +1,13 @@
 # Trigger Workflow and Wait
 
 Github Action for trigger a workflow from another workflow. The action then waits for a response.
-see: https://github.com/datavisyn/github-action-trigger-workflow/blob/master/README.md
+see: <https://github.com/datavisyn/github-action-trigger-workflow/blob/master/README.md>
 
-see also https://github.com/convictional/github-action-trigger-workflow
+see also <https://github.com/convictional/github-action-trigger-workflow>
 
 **When would you use it?**
 
 When deploying an app you may need to deploy additional services, this Github Action helps with that.
-
 
 ## Arguments
 
@@ -25,7 +24,6 @@ When deploying an app you may need to deploy additional services, this Github Ac
 | `propagate_failure`      | False      | `true`      | Fail current job if downstream job fails. |
 | `trigger_workflow`       | False      | `true`      | Trigger the specified workflow. |
 | `wait_workflow`          | False      | `true`      | Wait for workflow to finish. |
-
 
 ## Example
 
@@ -56,7 +54,6 @@ When deploying an app you may need to deploy additional services, this Github Ac
     trigger_workflow: true
     wait_workflow: true
 ```
-
 
 ## Testing
 
@@ -107,4 +104,3 @@ For testing a failure case, just add this line after the sleep:
 ## Potential Issues
 
 ### Changes
-
