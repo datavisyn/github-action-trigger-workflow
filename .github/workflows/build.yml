@@ -3,7 +3,7 @@ name: build
 on: [push, workflow_dispatch]
 
 env:
-  WORKFLOW_BRANCH: "new_deployment"
+  WORKFLOW_BRANCH: "main"
   TIME_ZONE: "Europe/Vienna"
 
 permissions:
