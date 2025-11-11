@@ -226,8 +226,5 @@ main() {
     echo "Skipping waiting for workflow."
   fi
 }
-echo "${GITHUB_API_URL}"
-echo "${INPUT_OWNER}"
-echo "${INPUT_REPO}"
 
 main
