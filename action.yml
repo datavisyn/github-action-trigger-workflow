@@ -36,11 +36,20 @@ inputs:
   wait_workflow:
     description: 'Wait for workflow to finish. default: true'
     required: false
+  comment_downstream_url:
+    description: 'A comments API URL to comment the current downstream job URL to. Default: no comment'
+    required: false
+  comment_github_token:
+    description: 'token used for pull_request comments'
+    required: false
+    default: ${{github.token}}
 outputs:
   workflow_id:
     description: The ID of the workflow that was triggered by this action
   workflow_url:
     description: The URL of the workflow that was triggered by this action
+  conclusion:
+    description: The conclusion of the workflow that was triggered by this action
 runs:
   using: 'docker'
   image: 'Dockerfile'
